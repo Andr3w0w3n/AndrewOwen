@@ -1,2 +1,2 @@
-# andrewowenvfx.github.io
+# AndrewOwen
 Personal website to show my accomplishments and...myself!

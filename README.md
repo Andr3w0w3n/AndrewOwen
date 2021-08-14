@@ -1,2 +1,2 @@
 # AndrewOwen
-Personal website to show my accomplishments and...myself!
+A github Personal website to show my accomplishments and...myself!

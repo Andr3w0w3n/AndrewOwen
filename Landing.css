@@ -9,13 +9,18 @@
     font-family: helvetica;
 }
 
-body {
-    background: var(--bg);
+body, html {
+    height: 100%;
+}
+
+.bg-image{
     background-image: url("./Images/Background/DSC_4032.jpg");
-    /*background-image: url('/Images/Background/DSC_4032.jpg');
+    height: 150%;
     background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;*/
+    background-position: center;
+    background-size: cover;
+    filter: blur(5px);
+    /*-webkit-filter: blur(5px);*/
 }
 
 ul {

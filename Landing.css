@@ -11,6 +11,11 @@
 
 body {
     background: var(--bg);
+    background-image: url("./Images/Background/DSC_4032.jpg");
+    /*background-image: url('/Images/Background/DSC_4032.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;*/
 }
 
 ul {

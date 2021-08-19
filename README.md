@@ -9,3 +9,5 @@ Projects: A list of current and completed projects.
 Documents: Resume/C.V.
 
 Contact: A page with my contact information
+
+This website is still being constructed and is a way to help me learn HTML and CSS!

@@ -10,4 +10,6 @@ Documents: Resume/C.V.
 
 Contact: A page with my contact information
 
-This website is still being constructed and is a way to help me learn HTML and CSS!
+Thoughts: Maybe have all info in 1 page?
+
+This website is still being constructed and is a way to help me learn HTML, CSS and Javascript!

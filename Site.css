@@ -72,6 +72,20 @@ li {
     outline-style: none; 
 }
 
-{
+/*tabs code*/
 
+.tab{
+
+}
+
+.tab button{
+
+}
+
+.tab button:hover{
+
+}
+
+.tab button.active{
+    
 }

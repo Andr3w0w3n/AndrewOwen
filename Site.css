@@ -16,12 +16,14 @@ body, html {
 .bg-image{
     background-image: url("./Images/Background/DSC_4032.jpg");
     height: 150%;
+    width: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     filter: blur(5px);
     overflow: hidden;
     transform: scale(1.1);
+    position: relative;
     /*-webkit-filter: blur(5px);*/
 }
 
@@ -68,4 +70,8 @@ li {
 
 .btn:focus { 
     outline-style: none; 
+}
+
+{
+
 }

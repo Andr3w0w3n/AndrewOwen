@@ -6,9 +6,9 @@ body {
 }
 
 #render-node {
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 75px;
     background-color: rgb(255, 255, 70);
-    position: center;
+    position: absolute;
     cursor: grab;
 }

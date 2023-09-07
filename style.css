@@ -6,8 +6,8 @@ body {
 }
 
 #render-node {
-    width: 125px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
     background-color: rgb(255, 255, 70);
     position: absolute;
     cursor: grab;

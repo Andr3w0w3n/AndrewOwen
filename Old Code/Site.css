@@ -1,0 +1,93 @@
+:root {
+    --green: #00FF00;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+* {
+    color: var(--fontColor);
+    font-family: helvetica;
+}
+
+body, html {
+    height: 100%;
+}
+
+.bg-image{
+    background-image: url("./Images/Background/DSC_4032.jpg");
+    height: 150%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(5px);
+    overflow: hidden;
+    transform: scale(1.15);
+    position: relative;
+    /*-webkit-filter: blur(5px);*/
+}
+
+ul {
+    font-family: helvetica;
+}
+
+li {
+    list-style: circle;
+}
+  
+.list {
+    list-style: square;
+}
+  
+/*#msg {
+    font-family: monospace;
+}*/
+
+.light-theme {
+    --bg: var(--green);
+    --fontColor: var(--black);
+    --btnBg: var(--black);
+    --btnFontColor: var(--white);
+}
+.dark-theme {
+    --bg: var(--black);
+    --fontColor: var(--white);
+    --btnBg: var(--white);
+    --btnFontColor: var(--black);
+}
+
+.btn {
+    position: absolute;
+    top: 20px;
+    left: 250px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    color: var(--btnFontColor);
+    background-color: var(--btnBg);
+}
+
+.btn:focus { 
+    outline-style: none; 
+}
+
+/*tabs code*/
+
+.tab{
+    overflow: hidden;
+    border: none;
+    background-color: #3a3a3a;
+}
+
+.tab button{
+
+}
+
+.tab button:hover{
+
+}
+
+.tab button.active{
+
+}

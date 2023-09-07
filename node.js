@@ -1,4 +1,4 @@
-const rectangle = document.getElementById('draggable-rectangle');
+const rectangle = document.getElementById('render-node');
 
 let isDragging = false;
 let offsetX, offsetY;

@@ -9,6 +9,6 @@ body {
     width: 100px;
     height: 100px;
     background-color: rgb(255, 255, 70);
-    position: absolute;
+    position: center;
     cursor: grab;
 }

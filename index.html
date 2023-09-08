@@ -7,13 +7,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="render-node" class="node">
-        Viewer
+    <!--Letters in name-->
+    <div id="name-container">
+        <div class="name-letter" id="letter-A">A</div>
+        <div class="name-letter" id="letter-n">n</div>
+        <div class="name-letter" id="letter-d">d</div>
+        <div class="name-letter" id="letter-r">r</div>
+        <div class="name-letter" id="letter-e">e</div>
+        <div class="name-letter" id="letter-w">w</div>
+        <div class="name-letter" id="letter-space"> </div>
+        <div class="name-letter" id="letter-O">O</div>
+        <div class="name-letter" id="letter-w">w</div>
+        <div class="name-letter" id="letter-e">e</div>
+        <div class="name-letter" id="letter-n">n</div>
     </div>
-    <script src="viewer_node.js" class="node"></script>
 
-    <div id="about-node" class="node">
-        About
+    <div id="viewer-node">
+        <div class="viewer-content">
+            <div class="viewer-text">Viewer</div>
+            <button class="viewer-button">GO!</button>
+        </div>
+        <div class="arrow"></div>
     </div>
+    <div id="nodes-container" class="node-container">
+        <div class="node" style="background: linear-gradient(to bottom, #24f8ff, #00a8a8);">About</div>
+        <div class="node" style="background: linear-gradient(to bottom, #18ff5d, #01bd49);">Reels</div>
+        <div class="node" style="background: linear-gradient(to bottom, #f02222, #c50c0c);">Projects</div>
+        <div class="node" style="background: linear-gradient(to bottom, #f8a72c, #b3910d);">Resume</div>
+    </div>
+
+    <script src="viewer_node.js" class="node"></script>
+    <script src="site_functions.js"></script>
 </body>
 </html>

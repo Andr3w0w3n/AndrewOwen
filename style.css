@@ -1,54 +1,89 @@
-body {
-    background-color: #646464;
-    margin: 0;
-    padding: 0; 
-    font-family: Arial, sans-serif; 
+html {
+    height: 100%;
 }
 
-#render-node {
+body {
+    height: 100%;
+    background-repeat: no-repeat;
+    background: linear-gradient(to bottom, #646464, #4e4e4e);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#viewer-node {
     width: 150px;
     height: 50px;
-    background-color: rgb(245, 245, 33);
-    position: absolute;
+    background-image: linear-gradient(to bottom, #ffee06, #b4a90f);
+    position: fixed;
     cursor: grab;
     z-index: 110;
-
+    padding: 10px;
+    border: 1px solid #000;
     text-align: center;
-    line-height: 30px; 
+    line-height: 30px;
+    font-size: 24px;
     color: #000;
+    top: 0;
+    left: 0;
 }
 
-#about-node {
-    width: 150px;
-    height: 30px;
-    background-color: rgb(122, 158, 255);
-    position: absolute;
-    left: 100px;
-    right: 100px;
-    top: 100px;
-
-    text-align: center;
-    line-height: 30px; 
-    color: #000;
+#name-container {
+    text-align: center; /* Center horizontally */
+    padding-top: 50px; /* Adjust the top padding as needed */
 }
+
+.node-container {
+    display: flex;
+    justify-content: space-around; /* Equal spacing between nodes */
+    align-items: center; /* Center nodes vertically */
+    height: 100px; /* Set a fixed height or adjust as needed */
+}
+
 .node {
+    width: 150px; /* Fixed width for nodes */
+    height: 30px;
     position: absolute;
-    /*background-color: rgb(255, 255, 70);*/
+    text-align: center;
+    line-height: 30px;
+    color: #000;
+    padding: 10px;
     z-index: 100;
+    border: 1px solid #000;
 }
+
+/* Rest of your CSS remains the same */
+
 
 .arrow {
     width: 0;
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 20px solid rgb(0, 0, 0); /* Match rectangle's background color */
+    border-top: 20px solid #000000; /* Adjust the size and color as needed */
     position: absolute;
-    top: -20px; /* Adjust the position to place it above the rectangle */
+    top: -20px; /* Adjust the positioning to place the arrow above the viewer node */
     left: 50%;
     transform: translateX(-50%);
 }
 
-.content {
-    /* Styles for your content inside the rectangle */
+
+
+.viewer-button {
+    margin-top: -2vw; /* Use vw units for responsiveness */
+    background: none;
+    color: #000000;
+    padding: 0px 0px;
+    border: none;
+    cursor: pointer;
+}
+
+.viewer-content {
+    text-align: center; /* Center-align content horizontally */
+}
+
+.name-letter {
+    display: inline-block;
+    font-size: 50px;
+    cursor: grab; /* Enable dragging */
 }

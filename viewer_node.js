@@ -1,41 +1,41 @@
-const rectangle = document.getElementById('render-node');
-
+const viewerNode = document.getElementById('viewer-node');
 let isDragging = false;
 let offsetX, offsetY;
 
-rectangle.addEventListener('mousedown', (e) => {
+viewerNode.addEventListener('mousedown', (e) => {
     isDragging = true;
-    offsetX = e.clientX - rectangle.getBoundingClientRect().left;
-    offsetY = e.clientY - rectangle.getBoundingClientRect().top;
-    rectangle.style.cursor = 'grabbing'; // Change cursor while dragging
+
+    // Calculate the offsets relative to the mouse position within the viewer node
+    offsetX = e.clientX - viewerNode.getBoundingClientRect().left;
+    offsetY = e.clientY - viewerNode.getBoundingClientRect().top;
+
+    viewerNode.style.cursor = 'grabbing';
 });
 
 document.addEventListener('mousemove', (e) => {
     if (!isDragging) return;
 
-    // Calculate the new position
-    const x = e.clientX - offsetX;
-    const y = e.clientY - offsetY;
+    // Calculate the new position of the viewer node
+    const newX = e.clientX - offsetX;
+    const newY = e.clientY - offsetY;
 
-    // Get the viewport dimensions
+    // Get the dimensions of the viewport
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
-    // Calculate the maximum allowed positions
-    const maxX = viewportWidth - rectangle.clientWidth;
-    const maxY = viewportHeight - rectangle.clientHeight;
+    // Calculate the boundaries to keep the viewer node within the viewport
+    const maxX = viewportWidth - viewerNode.clientWidth;
+    const maxY = viewportHeight - viewerNode.clientHeight;
 
-    // Restrict the position within the viewport boundaries
-    const clampedX = Math.min(Math.max(0, x), maxX);
-    const clampedY = Math.min(Math.max(0, y), maxY);
+    // Clamp the new position within the boundaries
+    const clampedX = Math.min(Math.max(0, newX), maxX);
+    const clampedY = Math.min(Math.max(0, newY), maxY);
 
-    // Update the rectangle's position
-    rectangle.style.left = clampedX + 'px';
-    rectangle.style.top = clampedY + 'px';
+    viewerNode.style.left = clampedX + 'px';
+    viewerNode.style.top = clampedY + 'px';
 });
 
 document.addEventListener('mouseup', () => {
     isDragging = false;
-    rectangle.style.cursor = 'grab';
+    viewerNode.style.cursor = 'grab';
 });
-

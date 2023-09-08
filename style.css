@@ -6,9 +6,49 @@ body {
 }
 
 #render-node {
-    width: 100px;
-    height: 100px;
-    background-color: rgb(255, 255, 70);
+    width: 150px;
+    height: 50px;
+    background-color: rgb(245, 245, 33);
     position: absolute;
     cursor: grab;
+    z-index: 110;
+
+    text-align: center;
+    line-height: 30px; 
+    color: #000;
+}
+
+#about-node {
+    width: 150px;
+    height: 30px;
+    background-color: rgb(122, 158, 255);
+    position: absolute;
+    left: 100px;
+    right: 100px;
+    top: 100px;
+
+    text-align: center;
+    line-height: 30px; 
+    color: #000;
+}
+.node {
+    position: absolute;
+    /*background-color: rgb(255, 255, 70);*/
+    z-index: 100;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid rgb(0, 0, 0); /* Match rectangle's background color */
+    position: absolute;
+    top: -20px; /* Adjust the position to place it above the rectangle */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.content {
+    /* Styles for your content inside the rectangle */
 }

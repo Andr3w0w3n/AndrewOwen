@@ -1,5 +1,5 @@
 # AndrewOwen
-A github Personal website to show my abilities as a VFX artist, Techinical Director, and Programmer.
+A GitHub personal website (WORK IN PROGRESS) to show my abilities as a VFX artist, Techinical Director, and Programmer.
 
 
 About: Usual About info

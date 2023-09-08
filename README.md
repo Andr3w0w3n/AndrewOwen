@@ -1,15 +1,8 @@
 # AndrewOwen
-A github Personal website to show my accomplishments and...myself!
+A github Personal website to show my abilities as a VFX artist, Techinical Director, and Programmer.
 
-Landing: Picture of me/my photography! This is where you can find my about information as well as links to relavent pages
 
-Projects: A list of current and completed projects.
-(TODO: Have sortable?)
-
-Documents: Resume/C.V.
-
-Contact: A page with my contact information
-
-Thoughts: Maybe have all info in 1 page?
-
-This website is still being constructed and is a way to help me learn HTML, CSS and Javascript!
+About: Usual About info
+Reels: Will house password protected reels I make of my compositing ventures
+Projects: Various code or media projects that I have worked on
+Resume: Holds my resume that can be downloaded as a pdf

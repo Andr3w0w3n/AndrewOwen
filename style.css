@@ -2,6 +2,7 @@ html {
     height: 100%;
 }
 
+
 body {
     height: 100%;
     background-repeat: no-repeat;
@@ -10,6 +11,7 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
 }
+
 
 #viewer-node {
     width: 150px;
@@ -28,10 +30,12 @@ body {
     left: 0;
 }
 
+
 #name-container {
     text-align: center; /* Center horizontally */
     padding-top: 50px; /* Adjust the top padding as needed */
 }
+
 
 .node-container {
     display: flex;
@@ -39,6 +43,7 @@ body {
     align-items: center; /* Center nodes vertically */
     height: 100px; /* Set a fixed height or adjust as needed */
 }
+
 
 .node {
     width: 150px; /* Fixed width for nodes */
@@ -52,7 +57,10 @@ body {
     border: 1px solid #000;
 }
 
-/* Rest of your CSS remains the same */
+
+.unselectable-text {
+    user-select: none;
+}
 
 
 .arrow {
@@ -68,7 +76,6 @@ body {
 }
 
 
-
 .viewer-button {
     margin-top: -2vw; /* Use vw units for responsiveness */
     background: none;
@@ -78,9 +85,11 @@ body {
     cursor: pointer;
 }
 
+
 .viewer-content {
     text-align: center; /* Center-align content horizontally */
 }
+
 
 .name-letter {
     display: inline-block;

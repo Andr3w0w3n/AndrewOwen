@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+ul.nav-tabs {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    background-color: #333;
+}
+
+ul.nav-tabs li {
+    margin-right: 10px;
+}
+
+ul.nav-tabs li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #555;
+    border: 1px solid #444;
+    border-radius: 5px 5px 0 0;
+}
+
+ul.nav-tabs li a:hover {
+    background-color: #777;
+}
+
+.tab-content {
+    padding: 20px;
+}

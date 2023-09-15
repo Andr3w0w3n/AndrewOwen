@@ -1,46 +1,150 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #222;
-}
-
-ul.nav-tabs {
-    list-style-type: none;
-    padding: 0;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #3f3838;
+    font-family: 'Open Sans', sans-serif;
+    user-select: none;
 }
 
-ul.nav-tabs li {
-    margin-right: 50px;
-    margin-top: 10px;
+
+#full_name {
+    text-align: center;
 }
 
-ul.nav-tabs li a {
+#first_name {
+    display: inline-block; /* Add this property to display the letters on a single line */
+}
+
+
+.letter {
+    font-size: 80px;
+    cursor: pointer;
+    transition: all 1.0s ease-in-out;
+    -webkit-text-stroke: 0.5px #cac0c0;
+}
+
+.letter:hover {
+    transition: all 1.0s ease-in-out;
+}
+
+
+/*A*/
+#A {
+    
+}
+
+#A:hover {
+    
+}
+
+#A:hover::after {
+    content: "bout";
+    color:rgb(218, 218, 218);
+    font-size: 50px;
+}
+
+/*N*/
+#N {
+    
+}
+
+#N:hover {
+    
+}
+
+#N:hover::after {
+    content: "uke Breakdowns";
+    color:rgb(218, 218, 218);
+    font-size: 50px;
+}
+
+/*D*/
+#D {
+    
+}
+
+#D:hover {
+    
+}
+
+#D:hover::after {
+    content: "emo Reel";
+    color:rgb(218, 218, 218);
+    font-size: 50px;
+}
+
+
+/*R*/
+#R {
+    
+}
+
+#R:hover {
+    
+}
+
+#R:hover::after {
+    content: "esume";
+    color:rgb(218, 218, 218);
+    font-size: 50px;
+}
+
+/*E*/
+#E {
+    
+}
+
+#E:hover {
+    
+}
+
+#E:hover::after {
+    content: "xperience";
+    color:rgb(218, 218, 218);
+    font-size: 50px;
+}
+
+/*W*/
+#W {
+
+}
+
+#W:hover {
+    
+}
+
+#W:hover::after {
+    content: "orks in Progress";
+    color:rgb(218, 218, 218);
+    font-size: 50px;
+}
+
+
+#owen {
+    font-size: 45px;
+    margin-top: 20px;
+    -webkit-text-stroke: 0.5px #cac0c0;
+}
+
+
+.link {
+    text-align: center;
+    margin-top: 20px;
+    display: flex; /* Remove flex-direction: column; to display links side by side */
+    align-items: center;
+}
+
+.link a {
     text-decoration: none;
-    color: #fff;
-    padding: 10px 20px;
-    transition: transform 0.2s;
+    color: #ffffff;
+    margin: 5px;
 }
 
-ul.nav-tabs li a:hover {
-    color: #999999;
-    transform: scale(1.1);
-}
-
-.tab-content {
-    padding: 20px;
-}
-
-
-
-.links {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
-
-.links img {
-    width: 50px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin: 10px; /* Add spacing around the images */
+.link img {
+    width: 50px;
+    height: auto;
 }

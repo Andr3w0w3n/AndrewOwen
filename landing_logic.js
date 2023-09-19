@@ -3,11 +3,13 @@ const links = document.querySelectorAll(".link");
 const last_name = document.getElementById("owen");
 
 letters.forEach((letter) => {
-    letter.addEventListener("click", function () {
-        const targetURL = letter.getAttribute("data-url");
-        
-        window.location.href = targetURL;
-    });
+    if (letter.id != "R"){
+        letter.addEventListener("click", function () {
+            const targetURL = letter.getAttribute("data-url");
+            
+            window.location.href = targetURL;
+        });
+    }
 });
 
 letters.forEach((letter) => {
@@ -54,4 +56,8 @@ window.addEventListener("mouseout", () => {
     });
 
     last_name.style.transform = "translate(0, 0)";
+});
+
+document.getElementById("R").addEventListener("click", function() {
+    window.open("./Documents/William A. Owen - Resume.pdf", "_blank");
 });

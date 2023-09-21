@@ -10,7 +10,6 @@ body {
     user-select: none;
 }
 
-
 #full_name {
     text-align: center;
 }
@@ -25,10 +24,18 @@ body {
     cursor: pointer;
     transition: all 1.0s ease-in-out;
     -webkit-text-stroke: 0.5px #cac0c0;
+    animation: borderGrowShrink 2s infinite alternate;
 }
 
 .letter:hover {
     transition: all 1.0s ease-in-out;
+}
+
+.letter::after {
+    color:rgb(218, 218, 218);
+    font-size: 50px;
+    -webkit-text-stroke: 0.5px #cac0c0;
+    animation: none;
 }
 
 
@@ -43,8 +50,7 @@ body {
 
 #A:hover::after {
     content: "bout";
-    color:rgb(218, 218, 218);
-    font-size: 50px;
+    
 }
 
 /*N*/
@@ -58,8 +64,6 @@ body {
 
 #N:hover::after {
     content: "uke Breakdowns";
-    color:rgb(218, 218, 218);
-    font-size: 50px;
 }
 
 /*D*/
@@ -73,8 +77,6 @@ body {
 
 #D:hover::after {
     content: "emo Reel";
-    color:rgb(218, 218, 218);
-    font-size: 50px;
 }
 
 
@@ -89,8 +91,6 @@ body {
 
 #R:hover::after {
     content: "esume";
-    color:rgb(218, 218, 218);
-    font-size: 50px;
 }
 
 /*E*/
@@ -104,8 +104,6 @@ body {
 
 #E:hover::after {
     content: "xperience";
-    color:rgb(218, 218, 218);
-    font-size: 50px;
 }
 
 /*W*/
@@ -119,15 +117,11 @@ body {
 
 #W:hover::after {
     content: "orks in Progress";
-    color:rgb(218, 218, 218);
-    font-size: 50px;
 }
 
 
 #owen {
     font-size: 45px;
-    margin-top: 20px;
-    -webkit-text-stroke: 0.5px #cac0c0;
 }
 
 
@@ -147,4 +141,91 @@ body {
 .link img {
     width: 50px;
     height: auto;
+}
+
+@keyframes borderGrowShrink {
+    0% {
+        -webkit-text-stroke: 0.5px #cac0c0;
+    }
+    5% {
+        -webkit-text-stroke: 0.6px #cac0c0;
+    }
+    10% {
+        -webkit-text-stroke: 0.7px #cac0c0;
+    }
+    15% {
+        -webkit-text-stroke: 0.8px #cac0c0;
+    }
+    20% {
+        -webkit-text-stroke: 0.9px #cac0c0;
+    }
+    25% {
+        -webkit-text-stroke: 1px #cac0c0;
+    }
+    30% {
+        -webkit-text-stroke: 1.1px #cac0c0;
+    }
+    35% {
+        -webkit-text-stroke: 1.2px #cac0c0;
+    }
+    40% {
+        -webkit-text-stroke: 1.3px #cac0c0;
+    }
+    45% {
+        -webkit-text-stroke: 1.4px #cac0c0;
+    }
+    50% {
+        -webkit-text-stroke: 1.5px #cac0c0;
+    }
+    55% {
+        -webkit-text-stroke: 1.4px #cac0c0;
+    }
+    60% {
+        -webkit-text-stroke: 1.3px #cac0c0;
+    }
+    65% {
+        -webkit-text-stroke: 1.2px #cac0c0;
+    }
+    70% {
+        -webkit-text-stroke: 1.1px #cac0c0;
+    }
+    75% {
+        -webkit-text-stroke: 1px #cac0c0;
+    }
+    80% {
+        -webkit-text-stroke: 0.9px #cac0c0;
+    }
+    85% {
+        -webkit-text-stroke: 0.8px #cac0c0;
+    }
+    90% {
+        -webkit-text-stroke: 0.7px #cac0c0;
+    }
+    95% {
+        -webkit-text-stroke: 0.6px #cac0c0;
+    }
+    100% {
+        -webkit-text-stroke: 0.5px #cac0c0;
+    }
+}
+
+
+
+.circle {
+    width: 350px; /* Adjust the size as needed */
+    height: 350px; /* Adjust the size as needed */
+    background-color: white;
+    border: 2px solid black; /* Small black outline */
+    border-radius: 50%; /* Makes the shape a circle */
+    transition: transform 0.3s ease-in-out;
+    animation: floatAround 10s infinite linear;
+}
+
+#white_circle {
+    position: fixed;
+    top: 100px; /* Adjust the Y-coordinate as needed */
+    left: 200px; /* Adjust the X-coordinate as needed */
+    width: 400px; /* Adjust the size as needed */
+    height: 400px;
+    z-index: -1;
 }

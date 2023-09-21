@@ -61,3 +61,67 @@ window.addEventListener("mouseout", () => {
 document.getElementById("R").addEventListener("click", function() {
     window.open("./Documents/William A. Owen - Resume.pdf", "_blank");
 });
+
+
+function letterAnimation() {
+    const animatedElements = document.querySelectorAll(".letter");
+
+    
+    animatedElements.forEach((letter) => {
+        // Apply the animation
+        letter.style.animation = "borderGrowShrink 1.5s infinite alternate";
+
+        // Wait for 2 seconds (2000 milliseconds) and then remove the animation for this specific letter
+        setTimeout(function() {
+            letter.style.animation = "none"; // Remove the animation for this letter
+        }, 1500);
+    });
+}
+
+// Start the animation on page load
+letterAnimation();
+
+// Schedule the animation to repeat every 5 seconds
+setInterval(letterAnimation, 5000);
+
+// Randomly generate translation values between -25px and 25px for both X and Y axes
+function getRandomTranslation() {
+    const minX = -25;
+    const maxX = 25;
+    const minY = -25;
+    const maxY = 25;
+
+    const randomX = Math.random() * (maxX - minX) + minX;
+    const randomY = Math.random() * (maxY - minY) + minY;
+
+    return `translate(${randomX}px, ${randomY}px)`;
+}
+
+// Randomly generate a rotation value between -180deg and 180deg
+function getRandomRotation() {
+    const minRotation = -180;
+    const maxRotation = 180;
+
+    const randomRotation = Math.random() * (maxRotation - minRotation) + minRotation;
+
+    return `rotate(${randomRotation}deg)`;
+}
+
+const whiteCircle = document.getElementById("white_circle");
+
+function floatAround() {
+    // Generate random translation and rotation values
+    const randomTranslation = getRandomTranslation();
+    const randomRotation = getRandomRotation();
+
+    // Apply the random transformation to the circle
+    whiteCircle.style.transform = `${randomTranslation} ${randomRotation}`;
+
+    // Call the function again after a delay to create continuous animation
+    setTimeout(floatAround, 1000); // Adjust the delay as needed
+}
+
+// Start the animation
+floatAround();
+
+

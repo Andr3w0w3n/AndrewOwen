@@ -1,3 +1,4 @@
+
 body {
     display: flex;
     flex-direction: column;
@@ -214,18 +215,18 @@ body {
 .circle {
     width: 350px; /* Adjust the size as needed */
     height: 350px; /* Adjust the size as needed */
-    background-color: white;
-    border: 2px solid black; /* Small black outline */
+    background: linear-gradient(to top, #777777, #d1d1d1);
+    /*border: 2px solid black; /* Small black outline */
     border-radius: 50%; /* Makes the shape a circle */
-    transition: transform 0.3s ease-in-out;
+    transition: transform 1s ease-in-out;
     animation: floatAround 10s infinite linear;
 }
 
 #white_circle {
     position: fixed;
-    top: 100px; /* Adjust the Y-coordinate as needed */
-    left: 200px; /* Adjust the X-coordinate as needed */
-    width: 400px; /* Adjust the size as needed */
+    top: 0; /* Position at the top edge */
+    right: 0; /* Position at the right edge */
+    width: 400px;
     height: 400px;
     z-index: -1;
 }

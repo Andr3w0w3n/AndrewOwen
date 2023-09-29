@@ -107,21 +107,23 @@ function getRandomRotation() {
     return `rotate(${randomRotation}deg)`;
 }
 
-const whiteCircle = document.getElementById("white_circle");
+const circles = document.querySelectorAll(".circle");
 
-function floatAround() {
-    // Generate random translation and rotation values
-    const randomTranslation = getRandomTranslation();
-    const randomRotation = getRandomRotation();
+function floatCircle() {
+    circles.forEach((circle)=>{
+        const randomTranslation = getRandomTranslation();
+        // const randomRotation = getRandomRotation();
 
-    // Apply the random transformation to the circle
-    whiteCircle.style.transform = `${randomTranslation} ${randomRotation}`;
+        // whiteCircle.style.transform = `${randomTranslation} ${randomRotation}`;
+        circle.style.transform = `${randomTranslation}`;
 
-    // Call the function again after a delay to create continuous animation
-    setTimeout(floatAround, 1000); // Adjust the delay as needed
+        // Call the function again after a delay to create continuous animation
+        
+    })
+    // requestAnimationFrame(floatCircle);
 }
 
 // Start the animation
-floatAround();
+floatCircle();
 
 

@@ -20,7 +20,7 @@ body {
 
 .letter-container {
     display: block;
-    margin: 5px 0;
+    margin: 0px 0;
     cursor: pointer;
 }
 
@@ -39,14 +39,14 @@ body {
 
 .animated-text {
     position: absolute;
-    top: 0;
+    bottom: 7px;
     left: -100%;
+    white-space: nowrap; /* Add this line to prevent text from wrapping */
     
-    /* Keep the rest of the styles as is */
-    transition: left 0.5s ease-in-out;
+    transition: left 1s ease-in-out;
     visibility: hidden;
     color: rgb(218, 218, 218);
-    font-size: 50px; /* Set the desired font size */
+    font-size: 50px;
     -webkit-text-stroke: 0.5px #cac0c0;
     align-items: left;
     justify-content: left;
@@ -64,7 +64,7 @@ body {
 }
 
 
-/* Styles for specific letters */
+/* Styles for specific letters, currently not being used */
 #A:hover::after {
     content: "bout";
 }
@@ -88,6 +88,7 @@ body {
 #W:hover::after {
     content: "orks in Progress";
 }
+
 
 #owen {
     font-size: 45px;

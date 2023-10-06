@@ -1,4 +1,3 @@
-
 body {
     display: flex;
     flex-direction: column;
@@ -16,130 +15,88 @@ body {
 }
 
 #first_name {
-    display: inline-block; /* Add this property to display the letters on a single line */
+    display: inline-block;
 }
 
+.letter-container {
+    display: block;
+    margin: 5px 0;
+    cursor: pointer;
+}
 
 /* General styles for all letters */
 .letter {
     font-size: 80px;
-    cursor: pointer;
     -webkit-text-stroke: 0.5px #cac0c0;
     animation: borderGrowShrink 2s infinite alternate;
     position: relative;
-    white-space: nowrap;
+    display: inline-block;
 }
 
 .letter:hover {
     transition: all 1.0s ease-in-out;
 }
 
-.letter::after {
-    content: attr(data-content); /* Use data-content attribute as content */
+.animated-text {
     position: absolute;
     top: 0;
-    left: 0; /* Initially position it within the letter */
-    transition: left 0.5s ease-in-out; /* Transition for left property */
-    white-space: nowrap;
-}
-
-.letter:hover::after {
-    left: 100%;
-    transform: translateX(100%); /* Slide the content in from the right */
+    left: -100%;
+    
+    /* Keep the rest of the styles as is */
+    transition: left 0.5s ease-in-out;
+    visibility: hidden;
     color: rgb(218, 218, 218);
-    font-size: 50px;
+    font-size: 50px; /* Set the desired font size */
     -webkit-text-stroke: 0.5px #cac0c0;
+    align-items: left;
+    justify-content: left;
 }
 
-/*A*/
-#A {
+.letter-container:hover .animated-text {
+    left: 0;
+}
+
+.letter:hover .animated-text {
+    left: 100%;
+    transform: translateX(0);
     
+    visibility: visible;
 }
 
-#A:hover {
-    
-}
 
+/* Styles for specific letters */
 #A:hover::after {
-    content: "bout"; /* Updated content on hover */
-}
-
-/*N*/
-#N {
-    
-}
-
-#N:hover {
-    
+    content: "bout";
 }
 
 #N:hover::after {
     content: "uke Breakdowns";
 }
 
-/*D*/
-#D {
-    
-}
-
-#D:hover {
-    
-}
-
 #D:hover::after {
     content: "emo Reel";
-}
-
-
-/*R*/
-#R {
-    
-}
-
-#R:hover {
-    
 }
 
 #R:hover::after {
     content: "esume";
 }
 
-/*E*/
-#E {
-    
-}
-
-#E:hover {
-    
-}
-
 #E:hover::after {
     content: "xperience";
-}
-
-/*W*/
-#W {
-
-}
-
-#W:hover {
-    
 }
 
 #W:hover::after {
     content: "orks in Progress";
 }
 
-
 #owen {
     font-size: 45px;
 }
 
-
 .link {
     text-align: center;
     margin-top: 20px;
-    display: flex; /* Remove flex-direction: column; to display links side by side */
+    display: flex;
     align-items: center;
 }
 
@@ -151,7 +108,6 @@ body {
 
 .link img {
     width: 50px;
-    height: auto;
 }
 
 @keyframes borderGrowShrink {

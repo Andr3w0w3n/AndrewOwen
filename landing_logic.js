@@ -1,90 +1,113 @@
-const letters = document.querySelectorAll(".letter");
+const letterContainers = document.querySelectorAll(".letter-container");
 const links = document.querySelectorAll(".link");
-const last_name = document.getElementById("owen");
+const lastName = document.getElementById("owen");
+const letterAnimationInterval = 5000; // Animation interval in milliseconds
 
-letters.forEach((letter) => {
-    if (letter.id != "R"){
-        letter.addEventListener("click", function () {
-            const targetURL = letter.getAttribute("data-url");
-            
-            window.location.href = targetURL;
+// Function to handle letter click events
+function handleLetterClick(container) {
+    if (!container.matches("#R")) {
+        const targetURL = container.getAttribute("data-url");
+        window.location.href = targetURL;
+    }
+}
+
+// Add click event listeners to letter containers
+letterContainers.forEach((container) => {
+    const letter = container.querySelector(".letter");
+    const animatedText = container.querySelector(".animated-text");
+
+    if (letter && animatedText) {
+        container.addEventListener("click", () => {
+            handleLetterClick(container);
+        });
+
+        container.style.transition = "transform 0.1s ease-in-out";
+
+        container.addEventListener("mouseover", () => {
+            animatedText.style.left = "100%";
+            animatedText.style.transform = "translateX(0)";
+            animatedText.style.visibility = "visible";
+        });
+
+        container.addEventListener("mouseout", () => {
+            animatedText.style.left = "-100%";
+            animatedText.style.transform = "translateX(0)";
+            animatedText.style.visibility = "hidden";
         });
     }
 });
 
-letters.forEach((letter) => {
-    letter.style.transition = "transform 0.1s ease-in-out";
-});
-
+// Add transition to links
 links.forEach((link) => {
     link.style.transition = "transform 0.1s ease-in-out";
 });
 
-last_name.style.transition = "Trasnsform 0.1s easy-in-out";
+// Add transition to last name
+lastName.style.transition = "transform 0.1s ease-in-out";
 
-window.addEventListener("mousemove", (event) => {
+// Function to handle mousemove event
+function handleMouseMove(event) {
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
     const mouseX = event.clientX;
     const mouseY = event.clientY;
 
-    const deltaX = (centerX - mouseX) / 50; // Adjust the divisor for sensitivity
-    const deltaY = (centerY - mouseY) / 50; // Adjust the divisor for sensitivity
+    const deltaX = (centerX - mouseX) / 50;
+    const deltaY = (centerY - mouseY) / 50;
 
-    letters.forEach((letter) => {
-        if (!letter.matches(":hover")) {
-            letter.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+    letterContainers.forEach((container) => {
+        if (!container.matches(":hover")) {
+            container.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
         }
     });
 
     links.forEach((link) => {
         if (!link.matches(":hover")) {
-            link.style.transform = `translate(${deltaX+5}px, ${deltaY+5}px)`;
+            link.style.transform = `translate(${deltaX + 5}px, ${deltaY + 5}px)`;
         }
     });
 
-    last_name.style.transform = `translate(${deltaX/1.25}px, ${deltaY/1.25}px)`;
-});
+    lastName.style.transform = `translate(${deltaX / 1.25}px, ${deltaY / 1.25}px)`;
+}
 
-window.addEventListener("mouseout", () => {
-    letters.forEach((letter) => {
-        letter.style.transform = "translate(0, 0)";
+// Function to reset transformations on mouseout
+function resetTransformations() {
+    letterContainers.forEach((container) => {
+        container.style.transform = "translate(0, 0)";
     });
-    
+
     links.forEach((link) => {
         link.style.transform = "translate(0, 0)";
     });
 
-    last_name.style.transform = "translate(0, 0)";
-});
+    lastName.style.transform = "translate(0, 0)";
+}
 
-document.getElementById("R").addEventListener("click", function() {
-    window.open("./Documents/William A. Owen - Resume.pdf", "_blank");
-});
+// Add mousemove and mouseout event listeners to the window
+window.addEventListener("mousemove", handleMouseMove);
+window.addEventListener("mouseout", resetTransformations);
 
+// Function to apply the letter animation
+function applyLetterAnimation() {
+    letterContainers.forEach((container) => {
+        const letter = container.querySelector(".letter");
+        if (letter) {
+            letter.style.animation = "borderGrowShrink 1.5s infinite alternate";
 
-function letterAnimation() {
-    const animatedElements = document.querySelectorAll(".letter");
-
-    
-    animatedElements.forEach((letter) => {
-        // Apply the animation
-        letter.style.animation = "borderGrowShrink 1.5s infinite alternate";
-
-        // Wait for 2 seconds (2000 milliseconds) and then remove the animation for this specific letter
-        setTimeout(function() {
-            letter.style.animation = "none"; // Remove the animation for this letter
-        }, 1500);
+            setTimeout(() => {
+                letter.style.animation = "none";
+            }, 1500);
+        }
     });
 }
 
-// Start the animation on page load
-letterAnimation();
+// Apply the letter animation on page load
+applyLetterAnimation();
 
-// Schedule the animation to repeat every 5 seconds
-setInterval(letterAnimation, 5000);
+// Schedule the animation to repeat at regular intervals
+setInterval(applyLetterAnimation, letterAnimationInterval);
 
-// Randomly generate translation values between -25px and 25px for both X and Y axes
+// Function to generate random translation values
 function getRandomTranslation() {
     const minX = -25;
     const maxX = 25;
@@ -96,34 +119,3 @@ function getRandomTranslation() {
 
     return `translate(${randomX}px, ${randomY}px)`;
 }
-
-// Randomly generate a rotation value between -180deg and 180deg
-function getRandomRotation() {
-    const minRotation = -180;
-    const maxRotation = 180;
-
-    const randomRotation = Math.random() * (maxRotation - minRotation) + minRotation;
-
-    return `rotate(${randomRotation}deg)`;
-}
-
-const circles = document.querySelectorAll(".circle");
-
-function floatCircle() {
-    circles.forEach((circle)=>{
-        const randomTranslation = getRandomTranslation();
-        // const randomRotation = getRandomRotation();
-
-        // whiteCircle.style.transform = `${randomTranslation} ${randomRotation}`;
-        circle.style.transform = `${randomTranslation}`;
-
-        // Call the function again after a delay to create continuous animation
-        
-    })
-    // requestAnimationFrame(floatCircle);
-}
-
-// Start the animation
-floatCircle();
-
-

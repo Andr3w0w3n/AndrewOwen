@@ -9,6 +9,10 @@ function handleLetterClick(container) {
         const targetURL = container.getAttribute("data-url");
         window.location.href = targetURL;
     }
+    else{
+        const targetURL = container.getAttribute("data-url");
+        window.open = targetURL;
+    }
 }
 
 // Add click event listeners to letter containers
@@ -24,15 +28,19 @@ letterContainers.forEach((container) => {
         container.style.transition = "transform 0.1s ease-in-out";
 
         container.addEventListener("mouseover", () => {
-            animatedText.style.left = "100%";
-            animatedText.style.transform = "translateX(0)";
             animatedText.style.visibility = "visible";
+            animatedText.style.opacity = 1;
         });
 
         container.addEventListener("mouseout", () => {
-            animatedText.style.left = "-100%";
-            animatedText.style.transform = "translateX(0)";
-            animatedText.style.visibility = "hidden";
+            // Set a short transition duration for mouseout
+            animatedText.style.transitionDuration = "0.2s";
+            animatedText.style.opacity = 0;
+
+            // Reset the transition duration after a short delay
+            setTimeout(() => {
+                animatedText.style.transitionDuration = "1.5s";
+            }, 200);
         });
     }
 });

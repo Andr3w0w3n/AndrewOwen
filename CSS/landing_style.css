@@ -40,32 +40,19 @@ body {
 .animated-text {
     position: absolute;
     bottom: 7px;
-    left: -100%;
-    white-space: nowrap; /* Add this line to prevent text from wrapping */
+    left: 90%;
+    white-space: nowrap;
     
-    transition: left 1s ease-in-out;
+    transition: opacity 1.5s ease-in-out, transform 0.2s ease-in-out; /* Add transform transition */
+    transform: translateX(0); /* Initial position */
     visibility: hidden;
     color: rgb(218, 218, 218);
     font-size: 50px;
     -webkit-text-stroke: 0.5px #cac0c0;
-    align-items: left;
-    justify-content: left;
 }
-
-.letter-container:hover .animated-text {
-    left: 0;
-}
-
-.letter:hover .animated-text {
-    left: 100%;
-    transform: translateX(0);
-    
-    visibility: visible;
-}
-
 
 /* Styles for specific letters, currently not being used */
-#A:hover::after {
+/*#A:hover::after {
     content: "bout";
 }
 
@@ -87,11 +74,12 @@ body {
 
 #W:hover::after {
     content: "orks in Progress";
-}
+}*/
 
 
 #owen {
     font-size: 45px;
+    -webkit-text-stroke: 0.25px #cac0c0;
 }
 
 .link {

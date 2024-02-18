@@ -40,11 +40,10 @@ body {
 .animated-text {
     position: absolute;
     bottom: 7px;
-    left: 90%;
+    left: 10px;
     white-space: nowrap;
     
-    transition: opacity 1.5s ease-in-out, transform 0.2s ease-in-out; /* Add transform transition */
-    transform: translateX(0); /* Initial position */
+    display: none;
     visibility: hidden;
     color: rgb(218, 218, 218);
     font-size: 50px;

@@ -5,43 +5,33 @@ const letterAnimationInterval = 5000; // Animation interval in milliseconds
 
 // Function to handle letter click events
 function handleLetterClick(container) {
-    if (!container.matches("#R")) {
+    if (!container.querySelector(".letter.R")) {
         const targetURL = container.getAttribute("data-url");
         window.location.href = targetURL;
-    }
-    else{
+    } else {
         const targetURL = container.getAttribute("data-url");
-        window.open = targetURL;
+        window.open(targetURL, "_blank"); // Use window.open to open in a new tab/window
     }
 }
 
+
 // Add click event listeners to letter containers
 letterContainers.forEach((container) => {
-    const letter = container.querySelector(".letter");
-    const animatedText = container.querySelector(".animated-text");
+    const letter = $(container).find(".letter");
+    const animatedText = $(container).find(".animated-text");
 
     if (letter && animatedText) {
-        container.addEventListener("click", () => {
-            handleLetterClick(container);
-        });
-
-        container.style.transition = "transform 0.1s ease-in-out";
-
-        container.addEventListener("mouseover", () => {
-            animatedText.style.visibility = "visible";
-            animatedText.style.opacity = 1;
-        });
-
-        container.addEventListener("mouseout", () => {
-            // Set a short transition duration for mouseout
-            animatedText.style.transitionDuration = "0.2s";
-            animatedText.style.opacity = 0;
-
-            // Reset the transition duration after a short delay
-            setTimeout(() => {
-                animatedText.style.transitionDuration = "1.5s";
-            }, 200);
-        });
+        $(container).hover(function () {
+                console.log("mouse in");
+                $(container).stop().animate({ marginleft:'50px'}, 300)
+                $(animatedText).fadeIn(300);
+            },
+            function(){
+                console.log("mouse out");
+                $(container).stop().animate({ marginleft:'0px'}, 300)
+                $(animatedText).fadeOut(300);
+            }
+        );
     }
 });
 

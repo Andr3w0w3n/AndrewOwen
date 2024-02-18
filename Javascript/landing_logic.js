@@ -17,22 +17,31 @@ function handleLetterClick(container) {
 
 // Add click event listeners to letter containers
 letterContainers.forEach((container) => {
-    const letter = $(container).find(".letter");
-    const animatedText = $(container).find(".animated-text");
+    var letter = $(container).find(".letter");
+    var animatedText = $(container).find(".animated-text");
+
+    animatedText.css({
+         left: letter.width()+1+"px"
+    });
 
     if (letter && animatedText) {
+        const movementDis = (letter.width()+animatedText.width())/2;
+
         $(container).hover(function () {
-                console.log("mouse in");
-                $(container).stop().animate({ marginleft:'50px'}, 300)
-                $(animatedText).fadeIn(300);
+                $(this).find(".animated-text").stop().fadeIn(1000);
+                $(this).stop().animate({ marginRight: movementDis + 'px'}, 300);
             },
             function(){
-                console.log("mouse out");
-                $(container).stop().animate({ marginleft:'0px'}, 300)
-                $(animatedText).fadeOut(300);
+                $(this).find(".animated-text").stop().fadeOut(500)
+                $(this).stop().animate({ marginRight:'0px'}, 300);
             }
         );
     }
+
+    $(container).click(function (e) { 
+        e.preventDefault();
+        handleLetterClick(container);
+    });
 });
 
 // Add transition to links

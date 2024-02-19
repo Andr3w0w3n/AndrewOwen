@@ -40,8 +40,6 @@ letterContainers.forEach((container) => {
     // });
 
     if (letter && animatedText) {
-        
-
         $(container).hover(function () {
                 aniTextIn($(container));
             },
@@ -162,7 +160,7 @@ function onLoad() {
         aniTextIn($(container));
     });
 
-    if(!window.mobileAndTabletCheck){
+    if(window.mobileAndTabletCheck){
         setTimeout(function () {
             letterContainers.forEach((container) => {
                 aniTextOut($(container));

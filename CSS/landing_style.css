@@ -14,34 +14,33 @@ body {
     text-align: center;
 }
 
-#first_name {
-    display: block;
-}
-
 .letter-container {
-    display: block;
-    margin: 0px 0;
+    /* display: inline-block; */
+    margin: 0px 10px;
     cursor: pointer;
+    position: relative; /* Add position relative for proper positioning of .animated-text */
 }
 
 /* General styles for all letters */
 .letter {
+    display: inline-block;
     font-size: 80px;
     -webkit-text-stroke: 0.5px #cac0c0;
     animation: borderGrowShrink 2s infinite alternate;
-    position: relative;
+    position: relative; /* Keep position relative for letter */
 }
 
 .animated-text {
-    position: relative;
+    position: absolute; /* Change position to absolute */
     white-space: nowrap;
     bottom: 6px;
-    
-    display: none;
+    display: inline-block;
     color: rgb(218, 218, 218);
     font-size: 50px;
     -webkit-text-stroke: 0.5px #cac0c0;
+    opacity: 0;
 }
+
 
 /* Styles for specific letters, currently not being used */
 /*#A:hover::after {

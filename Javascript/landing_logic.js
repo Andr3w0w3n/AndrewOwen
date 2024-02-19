@@ -25,14 +25,14 @@ letterContainers.forEach((container) => {
     });
 
     if (letter && animatedText) {
-        const movementDis = (letter.width()+animatedText.width())/2;
+        var movementDis = (letter.width()+animatedText.width())/2;
 
         $(container).hover(function () {
-                $(this).find(".animated-text").stop().fadeIn(1000);
-                $(this).stop().animate({ marginRight: movementDis + 'px'}, 300);
+                $(this).find(".animated-text").stop().animate({opacity: 1}, 1000);
+                $(this).stop().animate({ marginRight: movementDis*1.5 + 'px'}, 300);
             },
             function(){
-                $(this).find(".animated-text").stop().fadeOut(500)
+                $(this).find(".animated-text").stop().animate({opacity: 0}, 200);
                 $(this).stop().animate({ marginRight:'0px'}, 300);
             }
         );

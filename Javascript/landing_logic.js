@@ -2,31 +2,35 @@ const letterContainers = document.querySelectorAll(".letter-container");
 const links = document.querySelectorAll(".link");
 const lastName = document.getElementById("owen");
 const letterAnimationInterval = 5000; // Animation interval in milliseconds
+const textAnimationLength = 1000;
 
 
 
 // Function to handle letter click events
 function handleLetterClick(container) {
-    if (!container.querySelector(".letter.R")) {
-        const targetURL = container.getAttribute("data-url");
-        window.location.href = targetURL;
+    const targetURL = container.getAttribute("data-url");
+    debugger;
+    if (container.querySelector(".letter").innerText.trim() === 'R') {
+        window.open(targetURL, "_blank");
     } else {
-        const targetURL = container.getAttribute("data-url");
-        window.open(targetURL, "_blank"); // Use window.open to open in a new tab/window
+        window.location.href = targetURL;; // Use window.open to open in a new tab/window
     }
 }
 
 
 function aniTextIn(container){
     var movementDis = (container.find(".letter").width()+container.find(".animated-text").width())/2;
-    container.find(".animated-text").stop().animate({opacity: 1}, 1000);
+    container.find(".animated-text").css('visibility', 'visible');
+    container.find(".animated-text").stop().animate({opacity: 1}, textAnimationLength);
     container.stop().animate({ marginRight: movementDis*1.5 + 'px'}, 300);
 }
 
 
 function aniTextOut(container){
-    container.find(".animated-text").stop().animate({opacity: 0}, 200);
     container.stop().animate({ marginRight:'0px'}, 300);
+    container.find(".animated-text").stop().animate({opacity: 0}, 200, function(){
+        $(this).css('visibility', 'hidden');
+    });
 }
 
 
@@ -34,10 +38,6 @@ function aniTextOut(container){
 letterContainers.forEach((container) => {
     var letter = $(container).find(".letter");
     var animatedText = $(container).find(".animated-text");
-
-    // animatedText.css({
-    //      left: letter.width()+1+"px"
-    // });
 
     if (letter && animatedText) {
         $(container).hover(function () {
